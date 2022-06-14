@@ -1,23 +1,23 @@
 const { Router } = require('express');
-const {
-  VerifyPayloadForCreation,
-  verifyifEmailAllreadyExists,
-} = require('../../middleware/persons.middleware');
 
 const PersonsController = require('../controllers/PersonsController');
 
+const {
+  verifyPayloadForCreation,
+  verifyIfEmailAlreadyExists,
+} = require('../../middleware/persons.middleware');
+
 const personsRoutes = Router();
-
 const personsController = new PersonsController();
-
-personsRoutes.get('/', personsController.getAllPersons);
 
 personsRoutes.post(
   '/',
-  VerifyPayloadForCreation,
-  verifyifEmailAllreadyExists,
+  verifyPayloadForCreation,
+  verifyIfEmailAlreadyExists,
   personsController.createPersons
 );
+
+personsRoutes.get('/', personsController.getAllPersons);
 
 personsRoutes.put('/', personsController.updatePersons);
 

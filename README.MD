@@ -1,5 +1,5 @@
-person
+PERSON
 
-para criar um usuario , quais verificacoes?
+Para criar um usuario, quais verificações ?
 
-se o email cadastrodo existe
+- Verificar se existe o email cadastrado
